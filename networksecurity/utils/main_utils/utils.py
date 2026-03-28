@@ -6,8 +6,8 @@ import numpy as np
 #import dill
 import pickle
 
-#from sklearn.metrics import r2_score
-#from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import r2_score
+from sklearn.model_selection import GridSearchCV
 
 def read_yaml_file(file_path: str) -> dict:
     try:
@@ -50,7 +50,7 @@ def save_object(file_path: str, obj: object) -> None:
         logging.info("Exited the save_object method of MainUtils class")
     except Exception as e:
         raise NetworkSecurityException(e, sys) from e
-'''    
+  
 def load_object(file_path: str, ) -> object:
     try:
         if not os.path.exists(file_path):
@@ -106,4 +106,4 @@ def evaluate_models(X_train, y_train,X_test,y_test,models,param):
     except Exception as e:
         raise NetworkSecurityException(e, sys)
 
-        '''
+        
